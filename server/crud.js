@@ -3,7 +3,7 @@ const router = express.Router(); // create router
 const db = require('./connection'); // import DB connection
 
 // insert data to DB
-router.post('/testInsert', (req, res) => {
+router.post('/api/testInsert', (req, res) => {
     // get data from req body
     const name = req.body.name;
     const marks = Number(req.body.marks);
@@ -17,7 +17,7 @@ router.post('/testInsert', (req, res) => {
 });
 
 // get data from DB
-router.get('/testSelect', (req, res) => {
+router.get('/api/testSelect', (req, res) => {
     // select query
     const query = 'SELECT * FROM testtable1'
     // execute select query
@@ -29,7 +29,7 @@ router.get('/testSelect', (req, res) => {
 });
 
 // update data record in DB
-router.post('/testUpdate', (req, res) => {
+router.post('/api/testUpdate', (req, res) => {
     // get data from req body
     const id = Number(req.body.id);
     const name = req.body.name;
@@ -44,7 +44,7 @@ router.post('/testUpdate', (req, res) => {
 });
 
 // delete data record in DB
-router.post('/testDelete', (req, res) => {
+router.post('/api/testDelete', (req, res) => {
     // get data from req body
     const id = Number(req.body.id);
     // delete query
